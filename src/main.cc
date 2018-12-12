@@ -9,6 +9,16 @@ using namespace edu::vcccd::vc::csv15;
 
 int main(){
     int64_t numbers[] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-    uint64_t arraySize = (sizeof(numbers)/sizeof(int64_t));
+    int64_t arraySize = (sizeof(numbers)/sizeof(int64_t));
     mergesort(numbers , arraySize);
+
+    std::cout << "{";
+    for(int64_t k = 0; k <= arraySize; k++){
+         std::cout <<  numbers[k];
+         if (k < arraySize) {
+             std::cout << ", ";
+         }
+    }
+    std::cout << "}" << std::endl;
+
 }
