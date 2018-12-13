@@ -35,7 +35,7 @@ namespace edu { namespace vcccd { namespace vc { namespace csv15 {
         Alpaca *hold = new Alpaca[size];
         Alpaca *b = lower, *u = upper, *h = hold;
        // std::cout << "b = " << *b << ", u = " << *u << ", h = " << *h << std::endl;
-        while(b <= upper && u <= upper + size/2){
+        while(b < upper && u < upper + size/2 + size%2){
             if (*b < *u) {
                 *h = *b;
                 b++;
@@ -50,14 +50,14 @@ namespace edu { namespace vcccd { namespace vc { namespace csv15 {
             b++;
             h++;
         }
-        while (u < upper + size/2){
+        while (u < upper + size/2 + size%2){
             *h = *u;
             u++;
             h++;
         }
 
 
-        for (int64_t k = 0;k <= size; k++) {
+        for (int64_t k = 0;k < size; k++) {
             std::cout<< hold[k] << " ";
             lower[k] = hold[k];
         }

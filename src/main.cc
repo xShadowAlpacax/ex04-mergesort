@@ -13,9 +13,9 @@ int main(){
     mergesort(numbers , arraySize);
 
     std::cout << "{";
-    for(int64_t k = 0; k <= arraySize; k++){
+    for(int64_t k = 0; k < arraySize; k++){
          std::cout <<  numbers[k];
-         if (k < arraySize) {
+         if (k < arraySize - 1) {
              std::cout << ", ";
          }
     }
